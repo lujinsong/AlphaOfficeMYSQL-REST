@@ -6,10 +6,10 @@ var bodyParser = require('body-parser')
 var mysql      = require('mysql')
 var hostString = process.argv[2]
 var connection = mysql.createConnection({
-    host     : '140.86.13.9',
-    port     : '1521',
-    user     : 'root',
-    password : 'Alpha2014_',
+    host     : process.env.MYSQLCS_HOST,
+    port     : process.env.MYSQLCS_MYSQL_PORT,
+    user     : process.env.MYSQLCS_USER_NAME,
+    password : process.env.MYSQLCS_USER_PASSWORD,
     database : 'AlphaOfficeDB'
 });
 
