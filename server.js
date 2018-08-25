@@ -6,7 +6,7 @@ var bodyParser = require('body-parser')
 var mysql      = require('mysql')
 var hostString = process.argv[2]
 var connection = mysql.createConnection({
-    host     : '129.213.163.177',
+    host     : 'YOUR-IPADDR-HERE',
     port     : '3306',
     user     : 'alpha',
     password : 'Alpha2018_',
