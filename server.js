@@ -6,14 +6,14 @@ var bodyParser = require('body-parser')
 var mysql      = require('mysql')
 var hostString = process.argv[2]
 var connection = mysql.createConnection({
-    host     : process.env.MYSQLCS_HOST,
-    port     : process.env.MYSQLCS_MYSQL_PORT,
-    user     : process.env.MYSQLCS_USER_NAME,
-    password : process.env.MYSQLCS_USER_PASSWORD,
+    host     : '129.213.163.177',
+    port     : '3306',
+    user     : 'alpha',
+    password : 'Alpha2018_',
     database : 'AlphaOfficeDB'
 });
 
-var port = process.env.PORT || 8002
+var port = process.env.PORT || 8080
 var app = express()
 
 app.use(bodyParser.json())
@@ -41,7 +41,7 @@ app.get('/products', function(req, res) {
 
     connection.query('SELECT * from PRODUCTS', function(err, rows, fields) {
         if (err) {
-            console.log('Error while performing Query.');
+            console.log('Error while performing Query. ' + err);
             return;
         }
         console.log('sql executed')
